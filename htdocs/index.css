@@ -1,0 +1,115 @@
+p {
+    color: #fff372;
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
+
+}
+p > img{
+    width:720px;
+    height:720px;
+    border:solid 10px;
+
+}
+a{
+    color: blue;
+   font-size: 40px;
+}
+body{
+    background-image:url(hiromotoG/Sora.jpg);
+    background-size: cover;
+     backdrop-filter: blur(30px);
+     border: 0.1px solid #004d9a;
+     height: 50cm;
+     
+      
+}
+
+h1{
+    text-align: center;
+    font-size: 120px;
+    color: #fff372;
+    padding: 0.5em 0;
+    font-weight: bold;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
+
+}
+h2 {
+    margin-top: 40px;
+    margin: auto;
+    width: 280px;
+    font-size: 35px;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 0px 5px #4087cd;
+    border: dashed 2px white;
+    padding: 0.5em 0.5em;
+}
+body{
+    margin-left: auto;
+    margin-right: auto;
+}
+.flexLinks{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+.box {
+    padding: 3em 3em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #60d386;
+    background: #FFF;
+    border: solid 14px #60d386;
+    border-radius: 30px;
+}
+/*
+.box1{
+    margin:2em 0;
+    position: relative;
+    padding: 1em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.box1:before, .box17:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.box1:before {left: 10px;}
+.box1:after {right: 10px;}
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}*/
+.tikatika{
+    font-weight:bold;
+    transition:.3s;
+    text-decoration:underline;
+    }
+    .tikatika a:hover{
+    font-weight:bold;
+    color:#f89174 !important;
+    transition:.3s;
+    }
+/*.space{
+    margin-bottom: 70px;
+}*/
+.box p {
+    margin: 0; 
+    padding: 0;
+}
+/*.map{
+    margin: auto;
+}*/
+.ababa{
+    color: rgba(0, 0, 0, 0.133);
+    float: right;
+}
