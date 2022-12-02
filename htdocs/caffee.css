@@ -16,7 +16,7 @@ p > img{
   border: solid 10px;
   }
 body{
-    background-image:url('/caffeeimg/caffee.haikei.jpg');
+    background-image:url('hiromotoG/caffee.haikei.jpg');
     background-size: contain;
      backdrop-filter: blur(10px);
      border: 1px solid white;
