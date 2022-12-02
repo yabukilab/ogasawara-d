@@ -62,7 +62,7 @@ h3{
 }
 
 body{
-    background-image:url('hiromotoG/haikei\ copy.jpg');
+    background-image:url('hiromotoG/haikei.copy.jpg');
     background-size:contain;
     background-attachment: fixed;
     backdrop-filter: blur(10px);
@@ -112,6 +112,6 @@ body{
 
 div.co{
     padding: 0 0 0 280px;
-    margin: 0
+    margin: 0;
 
 }
