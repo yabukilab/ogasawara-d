@@ -21,6 +21,7 @@ a{
 body{
     background-image:url(hiromotoG/Sora.jpg);
     background-size: cover;
+    background-attachment: fixed;
      backdrop-filter: blur(30px);
      border: 0.1px solid #004d9a;
      height: 50cm;
@@ -34,7 +35,7 @@ h1{
     color: #fff372;
     padding: 0.5em 0;
     font-weight: bold;
-    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: black;
 
 }
