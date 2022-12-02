@@ -1,6 +1,6 @@
 p {
     color: #fff372;
-    font-size: 21px;
+    font-size: 40px;
     text-align: center;
     font-weight: bold;
     -webkit-text-stroke-width: 4px;
@@ -27,7 +27,7 @@ body{
       
 }
 
-h1{
+h3{
     text-align: center;
     font-size: 70px;
     color: #fff372;
