@@ -37,13 +37,6 @@ body{
     border: 1px solid white;
 }
 
-@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))){
-    .backdrop{
-        background: rgba(100, 148, 185, 9);
-    }
-}
-
-
 h1{
     text-align: center;
     font-size: 120px;
