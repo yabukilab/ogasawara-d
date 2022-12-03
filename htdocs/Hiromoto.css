@@ -30,10 +30,9 @@ div.bun{
  
  } 
 body{
-    background-image:url('/hiromotoG/Sushi4.jfif');
+    background-image:url('/hiromotoG/sushi.haikei.jpg');
     background-size: contain;
     background-attachment: fixed;
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid white;
 }
 

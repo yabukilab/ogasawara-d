@@ -28,7 +28,6 @@ body{
     background-image:url('/hiromotoG/caffee.haikei.jpg');
     background-size: contain;
     background-attachment: fixed;
-    -webkit-backdrop-filter: blur(10px);
      border: 1px solid white;
       
 }
