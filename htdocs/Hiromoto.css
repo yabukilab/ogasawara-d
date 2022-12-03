@@ -11,8 +11,8 @@ p {
 
 }
 p > img{
-    width: 420px;
-    height:420px;
+    width: 400px;
+    height: 400px;
     border:solid 10px;
 }
 a{
