@@ -33,10 +33,8 @@ body{
     background-image:url('/hiromotoG/Sushi4.jfif');
     background-size: contain;
     background-attachment: fixed;
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid white;
-}
-.backdrop{-webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
 }
 
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))){
