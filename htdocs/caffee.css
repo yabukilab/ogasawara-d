@@ -11,8 +11,8 @@ p {
 
 }
 p > img{
-  width:360px;
-  height:270px;
+  width:240px;
+  height:240px;
   border: solid 10px;
   }
 div.bun{
@@ -37,7 +37,7 @@ a{
 }
 h1{
   text-align: center;
-    font-size: 90px;
+    font-size: 80px;
     color: #4875cf;
     padding: 0;
     margin: 0;
