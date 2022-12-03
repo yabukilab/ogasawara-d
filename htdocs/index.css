@@ -22,7 +22,7 @@ body{
     background-image:url(hiromotoG/Sora.jpg);
     background-size: cover;
     background-attachment: fixed;
-    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(10px);
     border: 0.1px solid #004d9a;
     height: 50cm;
      
