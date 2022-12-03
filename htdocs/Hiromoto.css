@@ -33,9 +33,12 @@ body{
     background-image:url('/hiromotoG/Sushi4.jfif');
     background-size: contain;
     background-attachment: fixed;
-    backdrop-filter: blur(10px);
     border: 1px solid white;
       
+}
+
+.contents-frame{
+    backdrop-filter: blur(10px);
 }
 
 h1{
