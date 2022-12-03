@@ -65,8 +65,10 @@ body{
     background-image:url('hiromotoG/haikei.copy.jpg');
     background-size:contain;
     background-attachment: fixed;
-    backdrop-filter: blur(10px);
     border: 1px solid white;
+}
+.backdrop{
+    backdrop-filter: blur(10px);
 }
 
 .sidebar{
