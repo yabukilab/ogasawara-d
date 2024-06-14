@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリックゲーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .game-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .score, .timer {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        .click-button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>クリックゲーム</h1>
+        <div class="score">スコア: <span id="score">0</span></div>
+        <div class="timer">タイマー: <span id="timer">10</span>秒</div>
+        <button class="click-button" id="clickButton">クリック！</button>
+    </div>
+
+    <script>
+        let score = 0;
+        let timeLeft = 10;
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const clickButton = document.getElementById('clickButton');
+
+        clickButton.addEventListener('click', () => {
+            if (timeLeft > 0) {
+                score++;
+                scoreDisplay.textContent = score;
+            }
+        });
+
+        const timer = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+            } else {
+                clearInterval(timer);
+                clickButton.disabled = true;
+                clickButton.textContent = 'ゲームオーバー';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
