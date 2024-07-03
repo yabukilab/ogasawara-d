@@ -15,7 +15,7 @@
         .header {
             background-color: #4A90E2;
             color: white;
-            padding: 10px 0 10px 0; /* Adjust padding to have more space at the bottom */
+            padding: 10px 0 10px 0;
             text-align: center;
         }
         .container {
@@ -34,9 +34,9 @@
             background-color: #4A90E2;
             color: white;
             border: 2px solid #000080;
-            padding: 30px 30px; /* Adjust padding to have less space at the top */
+            padding: 30px 30px;
             font-size: 16px;
-            margin: 20px 0; /* Adjust margin to have more space between buttons */
+            margin: 20px 0;
             cursor: pointer;
             width: 200px;
         }
@@ -44,9 +44,9 @@
             background-color: #4A90E2;
             color: white;
             border: 2px solid #000080;
-            padding: 20px 30px; /* Adjust padding to have less space at the top */
+            padding: 20px 30px;
             font-size: 16px;
-            margin: 20px 0; /* Adjust margin to have more space between buttons */
+            margin: 20px 0;
             cursor: pointer;
             width: 200px;
         }
@@ -59,13 +59,10 @@
     <div class="header">
         <h1>ONlinebrary</h1>
     </div>
-    <!--<//?php phpinfo();?>-->
-
     <div class="container">
         <button class="buttonA" onclick="location.href='login.php'">ログイン</button><br>
-        <button class="button" onclick="location.href='loginnew.php'">ログイン<br>情報登録</button>
+        <button class="button" onclick="location.href='loginnew.php'">ログイン<br>情報登録</button><br>
+        <button class="button" onclick="location.href='search_all.php'">データベース検索</button>
     </div>
 </body>
 </html>
-
-<!--http://localhost/library/menu.php-->
