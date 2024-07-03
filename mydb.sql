@@ -10,7 +10,7 @@ SET time_zone = "+00:00";
 
 #SQL文1
 
-USE librarydb;
+USE mydb;
 
 CREATE TABLE logininf (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -19,7 +19,7 @@ CREATE TABLE logininf (
 );
 
 #SQL文2
-USE librarydb;
+USE mydb;
 
 CREATE TABLE detail (
     id INT AUTO_INCREMENT PRIMARY KEY,
