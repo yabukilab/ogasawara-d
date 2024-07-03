@@ -1,4 +1,7 @@
+DROP DATABASE if exists mydb;
+
 CREATE DATABASE mydb;
+grant all on mydb.* to testuser@localhost identified by 'pass';
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -12,6 +15,8 @@ SET time_zone = "+00:00";
 
 USE mydb;
 
+DROP TABLE if exists logininf;
+
 CREATE TABLE logininf (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user VARCHAR(255) NOT NULL,
@@ -20,6 +25,8 @@ CREATE TABLE logininf (
 
 #SQL文2
 USE mydb;
+
+DROP TABLE if exists detail;
 
 CREATE TABLE detail (
     id INT AUTO_INCREMENT PRIMARY KEY,
