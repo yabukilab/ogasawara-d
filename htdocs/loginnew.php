@@ -91,60 +91,60 @@
             ・入力できる文字数は4桁～15桁まで
         </div>
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $confirm_password = $_POST['confirm_password'];
-            $error = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    $error = "";
 
-            if ($password !== $confirm_password) {
-                $error = "パスワードが一致しません。";
-            } elseif (!preg_match('/^[a-zA-Z0-9]{4,15}$/', $password)) {
-                $error = "パスワード条件に合致していません。";
-            } else {
-                $servername = "localhost";
-                $dbusername = "root";
-                $dbpassword = "";
-                $dbname = "librarydb";
+    if ($password !== $confirm_password) {
+        $error = "パスワードが一致しません。";
+    } elseif (!preg_match('/^[a-zA-Z0-9]{4,15}$/', $password)) {
+        $error = "パスワード条件に合致していません。";
+    } else {
+        $servername = "localhost";
+        $dbusername = "root";
+        $dbpassword = "";
+        $dbname = "librarydb";
 
-                $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+        $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
-                if ($conn->connect_error) {
-                    die("データベース接続失敗: " . $conn->connect_error);
-                }
-
-                // ユーザー名の重複チェック
-                $stmt = $conn->prepare("SELECT COUNT(*) FROM logininf WHERE user = ?");
-                $stmt->bind_param("s", $username);
-                $stmt->execute();
-                $stmt->bind_result($user_count);
-                $stmt->fetch();
-                $stmt->close();
-
-                if ($user_count > 0) {
-                    $error = "このアカウントは既に存在しています。";
-                } else {
-                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                    $stmt = $conn->prepare("INSERT INTO logininf (user, password) VALUES (?, ?)");
-                    $stmt->bind_param("ss", $username, $hashed_password);
-
-                    if ($stmt->execute()) {
-                        echo "<script>alert('登録が完了しました。'); window.location.href = 'index.php';</script>";
-                    } else {
-                        $error = "登録中にエラーが発生しました: " . $stmt->error;
-                    }
-
-                    $stmt->close();
-                }
-
-                $conn->close();
-            }
-
-            if ($error) {
-                echo "<div class='error'>$error</div>";
-            }
+        if ($conn->connect_error) {
+            die("データベース接続失敗: " . $conn->connect_error);
         }
-        ?>
+
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM logininf WHERE user = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($user_count);
+        $stmt->fetch();
+        $stmt->close();
+
+        if ($user_count > 0) {
+            $error = "このアカウントは既に存在しています。";
+        } else {
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $conn->prepare("INSERT INTO logininf (user, password) VALUES (?, ?)");
+            $stmt->bind_param("ss", $username, $hashed_password);
+
+            if ($stmt->execute()) {
+                echo "<script>alert('登録が完了しました。'); window.location.href = 'index.php';</script>";
+            } else {
+                $error = "登録中にエラーが発生しました: " . $stmt->error;
+            }
+
+            $stmt->close();
+        }
+
+        $conn->close();
+    }
+
+    if ($error) {
+        echo "<div class='error'>$error</div>";
+    }
+}
+?>
+
         <form action="" method="post">
             <div class="form-group">
                 <input type="text" name="username" placeholder="ユーザー名" required>
