@@ -13,9 +13,9 @@ $error_message = "";
 // POSTリクエストがあった場合の処理
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // データベース接続情報
-    $servername = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
+    $servername = "ogasawara-d.pm-chiba.tech";
+    $dbusername = "testuser";
+    $dbpassword = "pass";
     $dbname = "librarydb";
 
     // ユーザー名とパスワードを取得

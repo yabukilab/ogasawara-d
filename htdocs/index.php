@@ -59,9 +59,7 @@
     <div class="header">
         <h1>ONlinebrary</h1>
     </div>
-    <?php
-phpinfo();
-?>
+    <!--<//?php phpinfo();?>-->
 
     <div class="container">
         <button class="buttonA" onclick="location.href='login.php'">ログイン</button><br>
