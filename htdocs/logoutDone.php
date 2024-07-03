@@ -49,7 +49,7 @@
     </div>
     <div class="container">
         <div class="title">ログアウトしました!</div>
-        <form action="menu.php" method="post">
+        <form action="index.php" method="post">
             <button type="submit" class="button">メニューへ</button>
         </form>
     </div>

@@ -129,7 +129,7 @@
                     $stmt->bind_param("ss", $username, $hashed_password);
 
                     if ($stmt->execute()) {
-                        echo "<script>alert('登録が完了しました。'); window.location.href = 'menu.php';</script>";
+                        echo "<script>alert('登録が完了しました。'); window.location.href = 'index.php';</script>";
                     } else {
                         $error = "登録中にエラーが発生しました: " . $stmt->error;
                     }
