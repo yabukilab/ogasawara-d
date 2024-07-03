@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (!preg_match('/^[a-zA-Z0-9]{4,15}$/', $password)) {
         $error = "パスワード条件に合致していません。";
     } else {
-        $servername = "localhost";
+        $servername = "ogasawara-d.pm-chiba.tech";
         $dbusername = "root";
         $dbpassword = "";
         $dbname = "librarydb";
