@@ -62,7 +62,6 @@
     <div class="container">
         <button class="buttonA" onclick="location.href='login.php'">ログイン</button><br>
         <button class="button" onclick="location.href='loginnew.php'">ログイン<br>情報登録</button><br>
-        <button class="button" onclick="location.href='search_all.php'">データベース検索</button>
     </div>
 </body>
 </html>
