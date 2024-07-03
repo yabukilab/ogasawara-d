@@ -103,8 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "パスワード条件に合致していません。";
     } else {
         $servername = "ogasawara-d.pm-chiba.tech";
-        $dbusername = "root";
-        $dbpassword = "";
+        $dbusername = "testuser";
+        $dbpassword = "pass";
         $dbname = "librarydb";
 
         $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
