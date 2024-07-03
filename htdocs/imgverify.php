@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>書籍情報確認 - ONlinebrary</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>書籍情報確認</h1>
