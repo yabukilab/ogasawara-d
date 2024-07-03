@@ -4,21 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン情報登録 - ONlinebrary</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #FFFFFF; margin: 0; padding: 0; }
-        .header { background-color: #4A90E2; color: white; padding: 10px 0; text-align: center; position: relative; }
-        .header .return-button { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background-color: white; color: #4A90E2; border: 2px solid #fff; padding: 10px 20px; margin-left: 20px; font-size: 16px; cursor: pointer; }
-        .header .return-button:hover { background-color: #4A90E2; color: white; border: 2px solid #fff; }
-        .container { width: 90%; margin: 20px auto; text-align: center; }
-        .title { font-size: 24px; margin-bottom: 10px; }
-        .subtitle { font-size: 18px; margin-bottom: 30px; }
-        .form-group { margin-bottom: 20px; }
-        input { padding: 10px; font-size: 16px; width: 200px; }
-        .button { background-color: #4A90E2; color: white; border: 2px solid #000080; padding: 15px 30px; font-size: 16px; cursor: pointer; }
-        .button:hover { background-color: #357ABD; }
-        .error { color: red; margin-top: 20px; }
-        .conditions { margin-bottom: 20px; color: #4A90E2; }
-    </style>
 </head>
 <body>
     <div class="header">
