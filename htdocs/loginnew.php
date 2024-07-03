@@ -81,7 +81,7 @@
 </head>
 <body>
     <div class="header">
-    <button class="return-button" onclick="location.href='menu.php'">戻る</button>
+    <button class="return-button" onclick="location.href='index.php'">戻る</button>
         <h1>ログイン情報登録画面</h1>
     </div>
     <div class="container">
