@@ -50,7 +50,79 @@ $db = null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($book['title']); ?> - 詳細</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .header .return-button {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #4A90E2;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            margin-left: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .header .return-button:hover {
+            background-color: #4A90E2;
+            color: white;
+            border: 2px solid #fff;
+        }
+        .container {
+            margin: 20px auto;
+            width: 80%;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .form-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .form-container input[type="checkbox"] {
+            margin: 10px;
+        }
+        .form-container textarea {
+            width: 100%;
+            height: 100px;
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #357ABD;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
