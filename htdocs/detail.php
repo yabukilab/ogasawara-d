@@ -20,7 +20,7 @@ $user_id = $stmt->fetchColumn();
 $id = $_GET['id'];
 
 // データを取得
-$stmt = $db->prepare("SELECT title, img, give, get, text, owner FROM detail WHERE id = ?");
+$stmt = $db->prepare("SELECT `get`, `text`, `owner` FROM detail WHERE `id` = ?");
 $stmt->execute([$id]);
 $book = $stmt->fetch(PDO::FETCH_ASSOC);
 
