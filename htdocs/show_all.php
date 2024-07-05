@@ -54,10 +54,10 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="grid-container">
             <?php foreach ($books as $book): ?>
-                <div class="book-item">
-                    <input type="checkbox" name="chk[]" value="<?php echo $book['id']; ?>" class="checkbox">
+                <div class="book-itemNot">
+                    <input type="checkbox" name="chk[]" value="<?php echo $book['id']; ?>" class="checkboxNot">
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
-                    <div class="book-item-title"><?php echo htmlspecialchars($book['title']); ?></div>
+                    <div class="book-item-titleNot"><?php echo htmlspecialchars($book['title']); ?></div>
                 </div>
             <?php endforeach; ?>
         </div>
