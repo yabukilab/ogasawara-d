@@ -5,26 +5,20 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-// データベース接続情報
 require 'db.php';
 
-// ユーザー名を取得
 $username = $_SESSION['username'];
 
-// ログインしているユーザーの ID を取得
 $stmt = $db->prepare("SELECT id FROM logininf WHERE user = ?");
 $stmt->execute([$username]);
 $user_id = $stmt->fetchColumn();
 
-// IDを取得
 $id = $_GET['id'];
 
-// データを取得
-$stmt = $db->prepare("SELECT `get`, `text`, `owner` FROM detail WHERE `id` = ?");
+$stmt = $db->prepare("SELECT `title`, `img`, `give`, `get`, `text`, `owner` FROM detail WHERE `id` = ?");
 $stmt->execute([$id]);
 $book = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// データを表示するかどうかのフラグ
 $show_data = ($book['owner'] == $user_id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $show_data) {
@@ -35,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $show_data) {
     $stmt = $db->prepare("UPDATE detail SET give = ?, get = ?, text = ? WHERE id = ?");
     $stmt->execute([$give, $get, $text, $id]);
 
-    // 更新後のデータを再取得
     $stmt = $db->prepare("SELECT title, img, give, get, text, owner FROM detail WHERE id = ?");
     $stmt->execute([$id]);
     $book = $stmt->fetch(PDO::FETCH_ASSOC);
