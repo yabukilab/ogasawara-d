@@ -1,3 +1,4 @@
+<!--imgimport.php-->
 <!DOCTYPE html>
 <html lang="ja">
 <head>

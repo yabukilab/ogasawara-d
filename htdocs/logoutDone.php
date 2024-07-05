@@ -1,3 +1,4 @@
+<!--logoutDone.php-->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
