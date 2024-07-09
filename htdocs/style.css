@@ -1,194 +1,175 @@
-/*style.css*/
-/*全体*/
+/* style.css */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFFFFF;
     margin: 0;
     padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
 }
+
 .header {
-    background-color: #4A90E2;
+    background-color: #1e90ff;
     color: white;
-    padding: 10px 0;
+    padding: 20px;
     text-align: center;
-    position: relative;
 }
-.header .return-button {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white;
-    color: #4A90E2;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    margin-left: 20px;
-    font-size: 16px;
-    cursor: pointer;
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
 }
-.header .return-button:hover {
-    background-color: #4A90E2;
-    color: white;
-    border: 2px solid #fff;
-}
+
 .container {
-    width: 90%;
+    max-width: 800px;
     margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
     text-align: center;
 }
-.title {
-    font-size: 24px;
-    margin-bottom: 30px;
-}
+
 .form-group {
     margin-bottom: 20px;
 }
-input {
-    padding: 10px;
-    font-size: 16px;
-    width: 200px;
+
+.form-group label {
     display: block;
-    margin: 0 auto;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
-.error {
-    color: red;
-    margin-top: 20px;
-}
-/*ボタン*/
-.button {
-    background-color: #4A90E2;
-    color: white;
-    border: 2px solid #000080;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
-}
-.button:hover {
-    background-color: #357ABD;
-}
-.buttonA {
-    background-color: #4A90E2;
-    color: white;
-    border: 2px solid #000080;
-    padding: 30px 30px;
-    font-size: 16px;
-    margin: 20px 0;
-    cursor: pointer;
-    width: 200px;
-}
-.buttons {
-    text-align: center;
-    margin: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-/*detail.php*/
-.image-container {
-    text-align: center;
-}
-.image-container img {
-    max-width: 100%;
-    height: auto;
-}
-.form-container {
-    text-align: center;
-    margin: 20px 0;
-}
-.form-container input[type="checkbox"] {
-    margin: 10px;
-}
-.form-container textarea {
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="file"],
+.form-group textarea {
     width: 100%;
-    height: 100px;
-    margin: 20px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-/*home.php*/
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1c86ee;
+}
+
+.return-button {
+    background-color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.return-button:hover {
+    background-color: #ff6347;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
-@media (min-width: 1200px) {
-    .grid-container {
-        grid-template-columns: repeat(7, 1fr);
-    }
-}
-@media (max-width: 1199px) and (min-width: 900px) {
-    .grid-container {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-@media (max-width: 899px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-.book-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    background-color: #000;
-}
-.book-item img {
-    max-width: 100%;
-    height: auto;
-}
-.book-item-title {
-    margin-top: 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-}
-/*imgimport*/
-input[type="text"],
-input[type="file"] {
-    padding: 10px;
-    font-size: 16px;
-    width: 200px; /* Adjusted width */
-}
-/*index.php*/
-/*loginnew.php*/
-.conditions { 
-    margin-bottom: 20px; 
-    color: #4A90E2; 
-}
-/*show_all.php*/
-.checkbox {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 20px;
-    height: 20px;
-    transform: scale(1.5); /* チェックボックスのサイズを大きくする */
-}
-/*show_all.php*/
+
+.book-item,
 .book-itemNot {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    background-color: #000;
-    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.book-item img,
 .book-itemNot img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    cursor: default; /* クリックできないようにする */
 }
+
+.book-item-title,
 .book-item-titleNot {
-    margin-top: 10px;
-    font-size: 16px;
-    text-decoration: none;
+    padding: 10px;
+    background-color: #1e90ff;
     color: white;
-    cursor: default; /* クリックできないようにする */
+    text-align: center;
+    font-weight: bold;
 }
-.checkboxNot {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 20px;
-    height: 20px;
-    transform: scale(1.5); /* チェックボックスのサイズを大きくする */
+
+.book-item-titleNot {
+    background-color: #ff4500;
+}
+
+.error {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.conditions {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Navbar styles */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .form-group input[type="text"],
+    .form-group input[type="password"],
+    .form-group input[type="file"],
+    .form-group textarea {
+        width: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
