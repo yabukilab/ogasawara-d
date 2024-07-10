@@ -12,8 +12,10 @@
         <h1>ONlinebrary</h1>
     </div>
     <div class="container">
+    <div class="btn2">
         <button class="button" onclick="location.href='login.php'">ログイン</button><br>
         <button class="button" onclick="location.href='loginnew.php'">新規登録</button><br>
+    </div>
     </div>
 </body>
 </html>
