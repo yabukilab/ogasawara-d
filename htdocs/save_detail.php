@@ -51,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         const video = document.createElement("video");
                         video.src = "motion/motion' . $randomVideoNumber . '.mp4";
                         video.controls = false;
-                        video.muted = true;  // ミュート設定
                         video.style.maxWidth = "80%";
                         video.style.maxHeight = "80%";
                         video.autoplay = true;
+                        video.playsinline = true; // インライン再生を有効にする
 
                         overlay.appendChild(video);
                         document.body.appendChild(overlay);
@@ -77,5 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 
