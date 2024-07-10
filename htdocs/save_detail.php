@@ -54,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         video.style.maxWidth = "80%";
                         video.style.maxHeight = "80%";
                         video.autoplay = true;
-                        video.playsinline = true; // インライン再生を有効にする
 
                         overlay.appendChild(video);
                         document.body.appendChild(overlay);
@@ -77,6 +76,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 
 
