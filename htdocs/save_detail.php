@@ -54,9 +54,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         video.style.maxWidth = "80%";
                         video.style.maxHeight = "80%";
                         video.autoplay = true;
+                        video.playsinline = true; // インライン再生を有効にする
 
                         overlay.appendChild(video);
                         document.body.appendChild(overlay);
+
+                        // インライン再生確認用のログ
+                        video.addEventListener("loadeddata", () => {
+                            if (video.playsInline) {
+                                console.log("動画がインラインで再生されます。");
+                            } else {
+                                console.log("動画が全画面で再生されます。");
+                            }
+                        });
 
                         video.addEventListener("ended", () => {
                             document.body.removeChild(overlay);
@@ -76,5 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 
