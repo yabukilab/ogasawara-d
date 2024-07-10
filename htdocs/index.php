@@ -12,8 +12,8 @@
         <h1>ONlinebrary</h1>
     </div>
     <div class="container">
-        <button class="buttonA" onclick="location.href='login.php'">ログイン</button><br>
-        <button class="buttonA" onclick="location.href='loginnew.php'">ログイン<br>情報登録</button><br>
+        <button class="button" onclick="location.href='login.php'">ログイン</button><br>
+        <button class="button" onclick="location.href='loginnew.php'">ログイン<br>情報登録</button><br>
     </div>
 </body>
 </html>
