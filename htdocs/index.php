@@ -1,4 +1,4 @@
-<!--index.php-->
+<!--index.phpあ-->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
