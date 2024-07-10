@@ -48,25 +48,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         overlay.style.alignItems = "center";
                         overlay.style.zIndex = "9999";
 
+                        const videoContainer = document.createElement("div");
+                        videoContainer.style.textAlign = "center";
+
+                        const button = document.createElement("button");
+                        button.textContent = "動画を再生";
+                        button.style.padding = "10px 20px";
+                        button.style.fontSize = "1.5em";
+                        button.style.backgroundColor = "#1e90ff";
+                        button.style.color = "#fff";
+                        button.style.border = "none";
+                        button.style.borderRadius = "5px";
+                        button.style.cursor = "pointer";
+
                         const video = document.createElement("video");
                         video.src = "motion/motion' . $randomVideoNumber . '.mp4";
-                        video.controls = false;
-                        video.playsinline = true;
-                        video.muted = true;
+                        video.controls = true;
                         video.style.maxWidth = "80%";
                         video.style.maxHeight = "80%";
-                        video.autoplay = true;
+                        video.style.display = "none";
 
-                        overlay.appendChild(video);
-                        document.body.appendChild(overlay);
-
-                        // JavaScriptで強制的にmute
-                        video.muted = true;
+                        button.addEventListener("click", () => {
+                            button.style.display = "none";
+                            video.style.display = "block";
+                            video.play();
+                        });
 
                         video.addEventListener("ended", () => {
                             document.body.removeChild(overlay);
                             window.location.href = "home.php";
                         });
+
+                        videoContainer.appendChild(button);
+                        videoContainer.appendChild(video);
+                        overlay.appendChild(videoContainer);
+                        document.body.appendChild(overlay);
                       </script>';
                 exit();
             } else {
