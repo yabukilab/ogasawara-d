@@ -49,16 +49,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         overlay.style.zIndex = "9999";
 
                         const video = document.createElement("video");
+                        video.id = "myvideo";
                         video.src = "motion/motion' . $randomVideoNumber . '.mp4";
                         video.controls = false;
                         video.playsinline = true;
-                        video.muted = true;
+                        video.muted = true; // 初期状態でmutedを設定
                         video.style.maxWidth = "80%";
                         video.style.maxHeight = "80%";
                         video.autoplay = true;
 
                         overlay.appendChild(video);
                         document.body.appendChild(overlay);
+
+                        // JavaScriptで強制的にmutedを設定
+                        document.addEventListener("DOMContentLoaded", function() {
+                            var video = document.getElementById("myvideo");
+                            video.muted = true;
+                        });
 
                         video.addEventListener("ended", () => {
                             document.body.removeChild(overlay);
