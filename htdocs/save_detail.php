@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         document.body.appendChild(overlay);
 
                         // インライン再生確認用のログ
-                        video.addEventListener("loadeddata", () => {
+                        video.addEventListener("canplay", () => {
                             if (video.playsInline) {
                                 console.log("動画がインラインで再生されます。");
                             } else {
@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 
 
