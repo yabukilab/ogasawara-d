@@ -39,7 +39,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム - ONlinebrary</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?<?php date_default_timezone_set('Asia/Tokyo'); echo date("ymdHi",filemtime("style.css")); ?>">
     <script>
         function sortBooks(order) {
             const form = document.createElement('form');
@@ -55,20 +55,28 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             document.body.appendChild(form);
             form.submit();
         }
+
+        function toggleMenu() {
+            const buttons = document.querySelector('.buttons');
+            buttons.classList.toggle('show');
+        }
     </script>
 </head>
 <body>
     <div class="header">
         <h1>ONlinebrary</h1>
-    </div>
-    <div class="container">
-        <div class="buttons">
-            <button class="button" onclick="location.href='logout.php'">ログアウト</button>
-            <button class="button" onclick="location.href='imgimport.php'">書籍登録</button>
-            <button class="button" onclick="sortBooks('asc')">名前昇順</button>
-            <button class="button" onclick="sortBooks('desc')">名前降順</button>
-            <button class="button" onclick="location.href='show_all.php'">書籍削除</button>
+        <button class="menu-button" onclick="toggleMenu()">メニュー</button>
+        <div class="containerbtn">
+            <div class="buttons menu-buttons">
+                <button class="button" onclick="location.href='logout.php'">ログアウト</button>
+                <button class="button" onclick="location.href='imgimport.php'">書籍登録</button>
+                <button class="button" onclick="sortBooks('asc')">名前昇順</button>
+                <button class="button" onclick="sortBooks('desc')">名前降順</button>
+                <button class="button" onclick="location.href='show_all.php'">書籍削除</button>
+            </div>
         </div>
+    </div>
+    <div class="container">    
         <div class="grid-container">
             <?php foreach ($books as $book): ?>
                 <div class="book-item">

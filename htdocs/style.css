@@ -11,7 +11,7 @@ body {
 .header {
     background-color: #1e90ff;
     color: white;
-    padding: 20px;
+    padding-top: 30px;
     text-align: center;
 }
 
@@ -27,6 +27,20 @@ body {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+}
+.containerbtn {
+    max-width: 800px;
+    margin: auto;
+    background-color: #1e90ff;
+    border-radius: 10px;
+}
+
+/* onebtnを右揃えにするための親コンテナを右揃えに */
+.right-align {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .title {
@@ -59,6 +73,12 @@ body {
 .form-group input[type="file"] {
     padding: 3px;
 }
+/*ボタン*/
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
 
 .button {
     display: inline-block;
@@ -67,29 +87,123 @@ body {
     color: white;
     background-color: #1e90ff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px 10px 0px 0px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #1c86ee;
+    background-color: #fff;
+    color: #1e90ff;
+}
+
+.onebtn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; 
+    margin-top: 10px; 
+}
+
+.onebtn:hover {
+    background-color: #fff;
+    color: #1e90ff;
 }
 
 .return-button {
-    background-color: #ff4500;
-    margin-bottom: 20px;
+    width: 50px;
+    height: 30px;
+    border-radius: 10%;
+    border-color: #1e90ff;
+    color: #1e90ff;
+    background-color: #fff;
+    margin-top: 15px;
+    margin-left: 15px;
+    
 }
 
 .return-button:hover {
-    background-color: #ff6347;
+    background-color: #fff;
+    color: #1e90ff;
 }
+
+/* メニューボタンのスタイル */
+.menu-button {
+    display: none;
+    background-color: #fff;
+    color: #1e90ff;
+    border: none;
+    padding: 5px 5px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.menu-button:hover {
+    background-color: #fff;
+    color: #1e90ff;
+}
+
+/* 600px以下の画面サイズでのスタイル */
+@media (max-width: 600px) {
+    .buttons {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        background-color: rgba(30, 144, 255, 0.9); /* 透明度を上げる */
+        top: 60px;
+        right: 20px;
+        width: auto;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .buttons.show {
+        display: flex;
+    }
+
+    .menu-button {
+        display: inline-block;
+    }
+
+    .buttons .button {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .header h1 {
+        text-align: left; /* 左揃えにする */
+        padding-left: 20px; /* 左側に余白を追加 */
+        font-size: 1.5em; /* 文字サイズを小さくする */
+    }
+
+    .menu-buttons .button {
+        background-color: rgba(30, 144, 255, 0.9); /* 透明度を上げる */
+    }
+}
+
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+}
+
+.checkboxNot {
+    width: 20px;  /* サイズを大きくする */
+    height: 20px;  /* サイズを大きくする */
 }
 
 .book-item,
@@ -113,6 +227,12 @@ body {
     color: white;
     text-align: center;
     font-weight: bold;
+    border-radius: 0 0 5px 5px;
+}
+
+.book-item a {
+    text-decoration: none; /* アンダーラインを削除 */
+    color: inherit; /* 親の色を継承 */
 }
 
 .book-item-titleNot {
@@ -173,3 +293,18 @@ textarea {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
+/* 画像の比率を維持しつつ最大幅と最大高さを設定 */
+.responsive-img {
+    max-width: 100%;
+    max-height: 80vh; /* ビューポートの高さの80% */
+    height: auto;
+    width: auto;
+}
+
+/* 画像を中央揃えにするためのスタイル */
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

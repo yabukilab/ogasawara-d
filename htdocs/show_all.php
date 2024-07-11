@@ -37,32 +37,43 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全データ表示（削除） - ONlinebrary</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?<?php date_default_timezone_set('Asia/Tokyo'); echo date("ymdHi",filemtime("style.css")); ?>">
+    <script>
+        function toggleMenu() {
+            const buttons = document.querySelector('.buttons');
+            buttons.classList.toggle('show');
+        }
+    </script>
 </head>
 <body>
     <div class="header">
-        <button class="return-button" onclick="location.href='home.php'">戻る</button>
-        <h1>削除したいデータの左上にチェックを入れ、削除を押してください</h1>
+        <h1>画像を押して<br>消したいものを選択</h1>
+        <button class="menu-button" onclick="toggleMenu()">メニュー</button>
+        <div class="containerbtn">
+            <div class="buttons menu-buttons">
+                <button class="button" onclick="location.href='home.php'">ホームへ</button>
+                <form method="post" action="show_all.php" style="display:inline;">
+                    <button type="submit" class="button" name="sort_order" value="asc">名前昇順</button>
+                    <button type="submit" class="button" name="sort_order" value="desc">名前降順</button>
+                </form>
+                <form method="post" action="delete_item.php" style="display:inline;">
+                    <button type="submit" class="button">チェックしてここをプッシュ</button>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="container">
-        <div class="buttons">
-            <form method="post" action="show_all.php" style="display:inline;">
-                <button type="submit" class="button" name="sort_order" value="asc">名前昇順</button>
-                <button type="submit" class="button" name="sort_order" value="desc">名前降順</button>
-            </form>
-            <form method="post" action="delete_item.php" style="display:inline;">
-                <button type="submit" class="button">削除</button>
-        </div>
         <div class="grid-container">
             <?php foreach ($books as $book): ?>
                 <div class="book-itemNot">
-                    <input type="checkbox" name="chk[]" value="<?php echo $book['id']; ?>" class="checkboxNot">
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
-                    <div class="book-item-titleNot"><?php echo htmlspecialchars($book['title']); ?></div>
+                    <label class="book-item-label">
+                        <input type="checkbox" name="chk[]" value="<?php echo $book['id']; ?>" class="checkboxNot">
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
+                        <div class="book-item-titleNot"><?php echo htmlspecialchars($book['title']); ?></div>
+                    </label>
                 </div>
             <?php endforeach; ?>
         </div>
-        </form>
     </div>
 </body>
 </html>

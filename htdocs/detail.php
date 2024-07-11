@@ -44,17 +44,19 @@ $db = null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($book['title']); ?> - 詳細</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?<?php date_default_timezone_set('Asia/Tokyo'); echo date("ymdHi",filemtime("style.css")); ?>">
 </head>
 <body>
     <div class="header">
-    <button class="return-button" onclick="location.href='home.php'">戻る</button>
         <h1><?php echo htmlspecialchars($book['title']); ?> - 詳細</h1>
+    </div>
+    <div>
+        <button class="return-button" onclick="location.href='home.php'">戻る</button>
     </div>
     <div class="container">
         <?php if ($show_data): ?>
             <div class="image-container">
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>" class="responsive-img center-img">
             </div>
             <form method="post" action="">
                 <div class="form-container">
@@ -69,7 +71,9 @@ $db = null;
                     <textarea name="text"><?php echo htmlspecialchars($book['text']); ?></textarea>
                 </div>
                 <div class="form-container">
-                    <button type="submit" class="button">更新</button>
+                    <div class="right-align">
+                        <button type="submit" class="onebtn">更新</button>
+                    </div>
                 </div>
             </form>
         <?php else: ?>
@@ -78,3 +82,5 @@ $db = null;
     </div>
 </body>
 </html>
+
+

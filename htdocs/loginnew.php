@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン情報登録 - ONlinebrary</title>
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css?<?php date_default_timezone_set('Asia/Tokyo'); echo date("ymdHi",filemtime("style.css")); ?>">
 </head>
 <body>
     <div class="header">
-        <button class="return-button" onclick="location.href='index.php'">戻る</button>
         <h1>ログイン情報登録画面</h1>
+    </div>
+    <div>
+    <button class="return-button" onclick="location.href='index.php'">戻る</button>
     </div>
     <div class="container">
         <div class="conditions">
@@ -65,7 +67,9 @@
             <div class="form-group">
                 <input type="password" name="confirm_password" placeholder="パスワード確認" required>
             </div>
-            <button type="submit" class="button">登録</button>
+            <div class="right-align">
+    <button type="submit" class="onebtn">登録</button>
+</div>
         </form>
     </div>
 </body>
