@@ -47,33 +47,35 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="header">
-        <h1>画像を押して<br>消したいものを選択</h1>
+        <h1>削除したいデータの左上にチェックを入れ、削除を押してください</h1>
         <button class="menu-button" onclick="toggleMenu()">メニュー</button>
         <div class="containerbtn">
-            <div class="buttons menu-buttons">
-                <button class="button" onclick="location.href='home.php'">ホームへ</button>
-                <form method="post" action="show_all.php" style="display:inline;">
-                    <button type="submit" class="button" name="sort_order" value="asc">名前昇順</button>
-                    <button type="submit" class="button" name="sort_order" value="desc">名前降順</button>
-                </form>
-                <form method="post" action="delete_item.php" style="display:inline;">
-                    <button type="submit" class="button">チェックしてここをプッシュ</button>
-                </form>
-            </div>
+        <div class="buttons menu-buttons">
+        <button class="button" onclick="location.href='home.php'">戻る</button>
+            <form method="post" action="show_all.php" style="display:inline;">
+                <button type="submit" class="button" name="sort_order" value="asc">名前昇順</button>
+                <button type="submit" class="button" name="sort_order" value="desc">名前降順</button>
+            </form>
+            <form method="post" action="delete_item.php" style="display:inline;">
+            <button type="submit" class="button">削除</button>
         </div>
     </div>
+    </div>
     <div class="container">
-        <div class="grid-container">
-            <?php foreach ($books as $book): ?>
-                <div class="book-itemNot">
-                    <label class="book-item-label">
-                        <input type="checkbox" name="chk[]" value="<?php echo $book['id']; ?>" class="checkboxNot">
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
-                        <div class="book-item-titleNot"><?php echo htmlspecialchars($book['title']); ?></div>
-                    </label>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <form method="post" action="delete_item.php">
+            <div class="grid-container">
+                <?php foreach ($books as $book): ?>
+                    <div class="book-itemNot">
+                        <label class="book-item-label">
+                            <input type="checkbox" name="chk[]" value="<?php echo $book['id']; ?>" class="checkboxNot">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode($book['img']); ?>" alt="<?php echo htmlspecialchars($book['title']); ?>">
+                            <div class="book-item-titleNot"><?php echo htmlspecialchars($book['title']); ?></div>
+                        </label>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </form>
     </div>
 </body>
 </html>
+
