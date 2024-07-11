@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $show_data) {
     $stmt = $db->prepare("UPDATE detail SET give = ?, `get` = ?, text = ? WHERE id = ?");
     $stmt->execute([$give, $get, $text, $id]);
 
-    $stmt = $db->prepare("SELECT title, img, give, get, text, owner FROM detail WHERE id = ?");
+    $stmt = $db->prepare("SELECT title, img, give, `get`, text, owner FROM detail WHERE id = ?");
     $stmt->execute([$id]);
     $book = $stmt->fetch(PDO::FETCH_ASSOC);
 }
