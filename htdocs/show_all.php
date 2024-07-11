@@ -61,7 +61,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     </div>
-    <p>削除したいデータにチェックを入れ、削除を押してください</p>
+    <p>削除したいデータにチェックを入れ、削除（スマホの場合はメニューから削除）を押してください</p>
     <div class="container">
         <form method="post" action="delete_item.php">
             <div class="grid-container">
