@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $show_data) {
     $get = isset($_POST['get']) ? 1 : 0;
     $text = $_POST['text'];
 
-    $stmt = $db->prepare("UPDATE detail SET give = ?, get = ?, text = ? WHERE id = ?");
+    $stmt = $db->prepare("UPDATE detail SET give = ?, `get` = ?, text = ? WHERE id = ?");
     $stmt->execute([$give, $get, $text, $id]);
 
     $stmt = $db->prepare("SELECT title, img, give, get, text, owner FROM detail WHERE id = ?");
