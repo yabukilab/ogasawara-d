@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $db->prepare("INSERT INTO detail (title, img, owner) VALUES (?, ?, ?)");
             if ($stmt->execute([$title, $img, $user_id])) {
                 echo "書籍情報が保存されました。";
-                $randomVideoNumber = rand(1, 8);
+                $randomVideoNumber = rand(1, 12);
                 echo '<script>
                         const overlay = document.createElement("div");
                         overlay.id = "overlay";
@@ -49,7 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         overlay.style.zIndex = "9999";
 
                         const videoContainer = document.createElement("div");
-                        videoContainer.style.textAlign = "center";
+                        videoContainer.style.display = "flex";
+                        videoContainer.style.flexDirection = "column";
+                        videoContainer.style.alignItems = "center";
 
                         const button = document.createElement("button");
                         button.textContent = "動画を再生";
@@ -97,4 +99,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-

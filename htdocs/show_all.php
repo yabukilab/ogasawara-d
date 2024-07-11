@@ -47,7 +47,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="header">
-        <h1>削除したいデータの左上にチェックを入れ、削除を押してください</h1>
+        <h1>画像をタップ</h1>
         <button class="menu-button" onclick="toggleMenu()">メニュー</button>
         <div class="containerbtn">
         <div class="buttons menu-buttons">
@@ -61,6 +61,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     </div>
+    <p>削除したいデータにチェックを入れ、削除を押してください</p>
     <div class="container">
         <form method="post" action="delete_item.php">
             <div class="grid-container">

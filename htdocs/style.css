@@ -1,5 +1,4 @@
 /* style.css */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -194,6 +193,9 @@ body {
     }
 }
 
+.menu-buttons .button:hover {
+    color: white; /* ホバー時の文字色を白に固定 */
+}
 
 .grid-container {
     display: grid;
@@ -308,3 +310,7 @@ textarea {
     margin-right: auto;
 }
 
+/* pタグを中央揃えにするスタイル */
+p {
+    text-align: center;
+}
