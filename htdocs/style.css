@@ -314,3 +314,51 @@ textarea {
 p {
     text-align: center;
 }
+
+/* スタイルの追加 */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px); /* ヘッダーの高さを差し引いた高さ */
+    text-align: center;
+    background-image: url('images/pop.webp'); /* 背景画像のパスを指定 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.middle{
+    margin-top: 20px;
+}
+
+.btnreaf {
+    margin-bottom: 10px; /* ボタン間のスペースを追加 */
+    background-color: #fff; /* 背景色に透明度を追加 */
+    color: #6fe0e4;
+    font-weight: bold;
+    border: solid #000 5px; 
+    padding: 30px 30px;
+    font-size: 1em;
+    border-radius: 70% 0%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnreaf:hover {
+    background-color: #6fe0e4;
+    color:#fff;
+}
+
+
+
+/* メディアクエリの追加（必要に応じて） */
+@media (max-width: 600px) {
+    .btn-container {
+        height: calc(100vh - 80px); /* ヘッダーの高さを差し引いた高さを調整 */
+    }
+}
