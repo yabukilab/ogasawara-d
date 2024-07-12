@@ -323,7 +323,7 @@ p {
     justify-content: center;
     height: calc(100vh - 100px); /* ヘッダーの高さを差し引いた高さ */
     text-align: center;
-    background-image: url('images/pop.webp'); /* 背景画像のパスを指定 */
+    background-image: url('../images/pop.webp'); /* 背景画像の相対パスを指定 */
     background-size: cover;
     background-position: center;
     position: relative;
