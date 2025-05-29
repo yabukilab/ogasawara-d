@@ -23,13 +23,15 @@ DROP TABLE IF EXISTS `food`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `food` (
-  `name` varchar(32) NOT NULL,
+  `N` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) NOT NULL,
   `g` int(11) NOT NULL,
   `y` int(11) NOT NULL,
   `m` int(11) NOT NULL,
   `d` int(11) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int(11) NOT NULL,
+  PRIMARY KEY (`N`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,55 +41,6 @@ CREATE TABLE `food` (
 LOCK TABLES `food` WRITE;
 /*!40000 ALTER TABLE `food` DISABLE KEYS */;
 /*!40000 ALTER TABLE `food` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pass`
---
-
-DROP TABLE IF EXISTS `pass`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pass` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pass` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pass`
---
-
-LOCK TABLES `pass` WRITE;
-/*!40000 ALTER TABLE `pass` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pass` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `table1`
---
-
-DROP TABLE IF EXISTS `table1`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `table1` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product` varchar(40) NOT NULL,
-  `cost` int(11) NOT NULL,
-  `stock` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `table1`
---
-
-LOCK TABLES `table1` WRITE;
-/*!40000 ALTER TABLE `table1` DISABLE KEYS */;
-INSERT INTO `table1` VALUES (1,'A',1280,1),(2,'B',2980,0),(3,'C',198,3),(4,'D',3980,5),(5,'E',990,121),(6,'F',1500,100),(7,'G',1980,52),(8,'H',256,22),(9,'I',512,27),(10,'J',3333,4);
-/*!40000 ALTER TABLE `table1` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -99,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-01 17:48:20
+-- Dump completed on 2025-05-29 17:43:16
