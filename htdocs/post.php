@@ -26,6 +26,11 @@ $prepare->bindValue(':d', $d, PDO::PARAM_STR);
 $prepare->bindValue(':id', $id, PDO::PARAM_STR);
 
 $prepare->execute(); # 実行
+                              
+$sql = 'SELECT * FROM food ';                  # SQL文
+$prepare = $db->prepare($sql);                  # 準備
+$prepare->execute();                            # 実行
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC); # 結果の取得
 ?>
 
 <table>
@@ -35,29 +40,24 @@ $prepare->execute(); # 実行
     <th>g/個</th>
     <th>賞味期限</th>
   </tr>
-<?php                              
-$sql = 'SELECT * FROM food';                  # SQL文
-$prepare = $db->prepare($sql);                  # 準備
-$prepare->execute();                            # 実行
-$result = $prepare->fetchAll(PDO::FETCH_ASSOC); # 結果の取得
-
+<?php
 foreach ($result as $row) {
-  
   $name = h($row['name']);
   $g = h($row['g']);
   $y = h($row['y']);
   $m = h($row['m']);
   $d = h($row['d']);
   $id2 = h($row['id']);
-  if($id=$id2){
+  if($id == $id2){
     echo '<tr>' .
       "<td>{$name}</td>".
       "<td>{$g}</td>".
       "<td>{$y}年{$m}月{$d}日</td>".
       '</tr>';
-  }
+  }  
 }
 ?>
 </table>
+
   </body>
 </html>
