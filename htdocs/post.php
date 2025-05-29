@@ -50,11 +50,11 @@ foreach ($result as $row) {
   $d = h($row['d']);
   $id2 = h($row['id']);
   if($id=$id2){
-  echo '<tr>' .
-    "<td>{$name}</td>".
-    "<td>{$g}</td>".
-    "<td>{$y}年{$m}月{$d}日</td>".
-    '</tr>';
+    echo '<tr>' .
+      "<td>{$name}</td>".
+      "<td>{$g}</td>".
+      "<td>{$y}年{$m}月{$d}日</td>".
+      '</tr>';
   }
 }
 ?>
