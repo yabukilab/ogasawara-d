@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
 
                 <div class="success-message"><?php echo htmlspecialchars($success); ?></div>
                 <div class="form-links">
-                    <a href="login.php">ログイン画面へ</a>
+                    <a href="index.php">ログイン画面へ</a>
                 </div>
             <?php else: ?>
                 <form method="POST" action="">
