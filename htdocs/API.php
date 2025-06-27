@@ -1,7 +1,7 @@
 <?php
 require_once 'db.php';
 
-$applicationId = '1016089100424721277';
+$applicationId = $_SERVER['API_KEY'];
 
 if (isset($_POST['selected']) && isset($_POST['data'])) {
     $index = $_POST['selected'];
