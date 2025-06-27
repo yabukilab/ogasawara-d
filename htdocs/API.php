@@ -68,15 +68,11 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
 
         $url = 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?' . http_build_query($params);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+$response = @file_get_contents($url);
 
-        if ($http_status === 200 && $response !== false) {
-            $data = json_decode($response, true);
+if ($response !== false) {
+    $http_status = 200;
+    $data = json_decode($response, true);
 ?>
 
     <div class="message success">
@@ -111,7 +107,7 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
     <?php endforeach; ?>
 
 <?php
-        } else {
+} else {
 ?>
 
     <div class="message error">
@@ -119,9 +115,7 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
     </div>
 
 <?php
-        }
-    endif;
-endif;
+}
 ?>
 
   <div class="button-group">
