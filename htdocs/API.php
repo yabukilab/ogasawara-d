@@ -115,7 +115,9 @@ if ($response !== false) {
     </div>
 
 <?php
-}
+        }
+    endif;
+endif;
 ?>
 
   <div class="button-group">
