@@ -8,12 +8,12 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
     if (isset($_POST['data'][$index]['name'])) {
         $name = $_POST['data'][$index]['name'];
     } else {
-        $error_message = "選択された食材が無効です。";
+        $_SESSION['message'] = "削除するデータが選択されていません。";
         header('Location: recipe.php');
         exit;
     }
 } else {
-    $error_message = "選択された食材はありません。";
+    $_SESSION['message'] = "削除するデータが選択されていません。";
     header('Location: recipe.php');
     exit;
 }
