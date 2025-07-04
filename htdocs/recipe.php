@@ -10,7 +10,7 @@ require 'db.php';
 
 // メッセージ表示
 if (!empty($_SESSION['message'])) {
-    echo "<p style='color:green'>" . h($_SESSION['message']) . "</p>";
+    echo "<p class='message success'>" . h($_SESSION['message']) . "</p>";
     unset($_SESSION['message']);
 }
 
