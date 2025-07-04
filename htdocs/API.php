@@ -9,12 +9,12 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
         $name = $_POST['data'][$index]['name'];
     } else {
         $error_message = "選択された食材が無効です。";
-        header('Location: recipe_delete.php');
+        header('Location: recipe.php');
         exit;
     }
 } else {
     $error_message = "選択された食材はありません。";
-    header('Location: recipe_delete.php');
+    header('Location: recipe.php');
     exit;
 }
 
