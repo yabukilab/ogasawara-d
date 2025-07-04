@@ -9,8 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
     $user_id = trim($_POST['user_id'] ?? '');
     $password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
-    
-    // バリデーション（修正済み）
+
     if (empty($user_id) || empty($password) || empty($confirm_password)) {
         $error = 'すべての項目を入力してください。';
     } elseif (strlen($user_id) < 3 || strlen($user_id) > 20) {  
@@ -21,17 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
         $error = 'パスワードが一致しません。';
     } else {
         try {
-            // ユーザーIDの重複チェック
+
             $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE user_id = ?");
             $stmt->execute([$user_id]);
             
             if ($stmt->fetchColumn() > 0) {
                 $error = 'このユーザーIDは既に使用されています。';
             }else{
-                // パスワードをハッシュ化
-               
-                
-                // ユーザー登録
+
                 $stmt = $db->prepare("INSERT INTO users (user_id, password) VALUES (?, ?)");
                 $stmt->execute([$user_id, $password]);
                 
@@ -72,19 +68,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
                     <div class="input-group">
                         <label for="user_id">ユーザーID</label>
                         <input type="text" id="user_id" name="user_id" value="<?php echo htmlspecialchars($_POST['user_id'] ?? ''); ?>" required>
-                        <small>3文字以上20文字以下で入力してください</small>
+                        <small>3文字以上32文字以下で入力してください</small>
                     </div>
                     
                     <div class="input-group">
                         <label for="password">パスワード</label>
                         <input type="password" id="password" name="password" required>
-                        <small>6文字以上で入力してください</small>
+                        <small>6文字以上32文字以下で入力してください</small>
                     </div>
                     
                     <div class="input-group">
                         <label for="confirm_password">パスワード（確認）</label>
                         <input type="password" id="confirm_password" name="confirm_password" required>
-                        <small>6文字以上で入力してください</small>
+                        <small>上記のパスワードと同じものを売ってください</small>
                     </div>
                     
                     <button type="submit" class="btn">登録!!</button>

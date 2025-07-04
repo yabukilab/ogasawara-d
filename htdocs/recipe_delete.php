@@ -67,7 +67,7 @@ $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
       </table>
       <div class="button-group">
-        <input type="submit" class="btn" value="削除処理へ送信">
+        <input type="submit" class="btn" value="削除">
       </div>
     </form>
   </div>
