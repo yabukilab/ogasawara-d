@@ -57,12 +57,6 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
     申し訳ありません。データベースにカテゴリIDが登録されていません。
   </div>
 
-  <div class="button-group">
-    <form action="recipe.php" method="get">
-      <button type="submit" class="btn">◀ 食材一覧に戻る</button>
-    </form>
-  </div>
-
 <?php
     else :
         $params = [
