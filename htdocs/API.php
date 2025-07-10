@@ -43,6 +43,7 @@ if (isset($_POST['selected']) && isset($_POST['data'])) {
     </form>
   </div>
 
+
 <?php else :
 
     // DBからカテゴリIDを取得
