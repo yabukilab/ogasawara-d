@@ -18,7 +18,7 @@ $user_id = $_SESSION['user_id'];
 <body>
 
 <div class="container">
-  <h2><br>冷蔵庫内管理＆</br>レシピ考案システムだよ</h2>
+  <h2><br>冷蔵庫内管理＆</br>レシピ考案システム</h2>
 
   <div class="button-group">
     <a href="post.php" class="btn">食材リストにポチッと登録！</a>
